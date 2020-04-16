@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import axios from 'axios';
-import APOD from './APOD/APOD';
+import Nav from './Components/Nav'
+import APOD from './Components/APOD'
+import Signup from './Components/SignUp'
+import Mars from './Components/Mars'
+import Footer from './Components/Footer'
 
 function App() {
 
@@ -17,7 +20,11 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <APOD picture={picture} setPicture={setPicture} pictureTitle={pictureTitle} setPictureTitle={setPictureTitle} pictureCopyright={pictureCopyright} setPictureCopyright={setPictureCopyright} pictureDate={pictureDate} setPictureDate={setPictureDate} pictureExplanation={pictureExplanation} setPictureExplanation={setPictureExplanation} />
+      <Signup />
+      <Mars />
+      <Footer />
     </div>
   );
 }

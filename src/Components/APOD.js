@@ -1,8 +1,19 @@
-import React, { useEffect, useState } from "react";
-import './APOD.css'
+import React, { useEffect } from "react";
 import axios from 'axios';
+import styled from 'styled-components'
 
 const api_key = 'eWgjUjAhcF03aN85v60ftt7pyn1cnxOxTwn7GhuU'
+
+const APODWrapper = styled.div`
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    border: 1px double #e0e0e0;
+    margin: 10px;
+    p, img {
+        background-color: lightgray;
+        padding: 10px;
+    }
+`;
 
 function APODimage ( {picture, setPicture, pictureTitle, setPictureTitle, pictureCopyright, setPictureCopyright, pictureDate, setPictureDate, pictureExplanation, setPictureExplanation } ) {
 
@@ -26,13 +37,13 @@ function APODimage ( {picture, setPicture, pictureTitle, setPictureTitle, pictur
     }
 
     return ( 
-        <div className="APOD-wrapper">
+        <APODWrapper>
             <img src={picture} width='500' height='350' />
             <p> {pictureTitle} </p>
             <p> {pictureCopyright} </p>
             <p> {pictureDate} </p>
             <p> {pictureExplanation} </p>
-        </div>
+        </APODWrapper>
     )
 
 }
